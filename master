@@ -1,0 +1,14 @@
+file_roots:
+  base:
+    - ./states
+
+pillar_roots:
+  base:
+    - ./pillar
+
+roster_defaults:
+  user: salt
+  sudo: True
+
+root_dir: .salt/
+

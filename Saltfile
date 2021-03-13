@@ -1,0 +1,3 @@
+salt-ssh:
+  roster_file: ./roster.yml
+  config_dir: ./

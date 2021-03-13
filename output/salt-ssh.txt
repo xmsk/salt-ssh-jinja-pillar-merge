@@ -1,0 +1,43 @@
+[] $ salt-ssh -i '*' state.apply complex pillar='{"complex": {"key2": "new val"}}'
+minion:
+----------
+          ID: file managed
+    Function: file.managed
+        Name: /tmp/salt-managed.txt
+      Result: True
+     Comment: File /tmp/salt-managed.txt updated
+     Started: 17:47:24.070687
+    Duration: 92.925 ms
+     Changes:   
+              ----------
+              diff:
+                  New file
+              mode:
+                  0644
+----------
+          ID: file append
+    Function: file.append
+        Name: /tmp/salt-append.txt
+      Result: True
+     Comment: Appended 1 lines
+     Started: 17:47:24.163732
+    Duration: 3.252 ms
+     Changes:   
+              ----------
+              diff:
+                  --- 
+                  
+                  +++ 
+                  
+                  @@ -0,0 +1 @@
+                  
+                  +key1: val1 key2: new val top_level: top_val
+
+Summary for minion
+------------
+Succeeded: 2 (changed=2)
+Failed:    0
+------------
+Total states run:     2
+Total run time:  96.177 ms
+[] $ 
